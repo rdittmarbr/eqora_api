@@ -1,0 +1,55 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies
+/vendor
+/node_modules
+
+# Build artifacts
+/public/build
+/public/hot
+
+# Runtime / generated files
+/public/storage
+/storage/*.key
+/storage/pail
+/storage/logs/*
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/bootstrap/cache/*.php
+/bootstrap/cache/*.json
+!/bootstrap/cache/.gitignore
+
+# Test and tool cache
+.phpunit.result.cache
+/.phpunit.cache
+.phpactor.json
+
+# IDE / editor
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+
+# Local auth/tooling
+/auth.json
+Homestead.json
+Homestead.yaml
+
+# Local nested repository
+/eqora_api/
