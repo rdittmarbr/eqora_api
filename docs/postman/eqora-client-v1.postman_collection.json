@@ -1,0 +1,791 @@
+{
+    "info": {
+        "name": "Eqora API Client v1",
+        "_postman_id": "65a90fdb3e635005d558147ece140898",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": "Gerado automaticamente a partir de php artisan route:list --json"
+    },
+    "item": [
+        {
+            "name": "debts",
+            "item": [
+                {
+                    "name": "GET api/client/v1/debts",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/debts",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "debts"
+                            ]
+                        },
+                        "description": "api.client.v1.debts.index"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "devices",
+            "item": [
+                {
+                    "name": "GET api/client/v1/devices",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/devices",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "devices"
+                            ]
+                        },
+                        "description": "api.client.v1.devices.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/client/v1/devices",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/devices",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "devices"
+                            ]
+                        },
+                        "description": "api.client.v1.devices.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/client/v1/devices/{device}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/devices/{{device}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "devices",
+                                "{{device}}"
+                            ]
+                        },
+                        "description": "api.client.v1.devices.show"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "entities",
+            "item": [
+                {
+                    "name": "GET api/client/v1/entities/{document}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/entities/{{document}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "entities",
+                                "{{document}}"
+                            ]
+                        },
+                        "description": "api.client.v1.entities.show"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/client/v1/entities/{entity}/login-events",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/entities/{{entity}}/login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "entities",
+                                "{{entity}}",
+                                "login-events"
+                            ]
+                        },
+                        "description": "api.client.v1.entities.login-events.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/client/v1/entities/{entity}/login-events",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/entities/{{entity}}/login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "entities",
+                                "{{entity}}",
+                                "login-events"
+                            ]
+                        },
+                        "description": "api.client.v1.entities.login-events.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "financial-pendencies",
+            "item": [
+                {
+                    "name": "GET api/client/v1/financial-pendencies",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/financial-pendencies",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "financial-pendencies"
+                            ]
+                        },
+                        "description": "api.client.v1.financial-pendencies.index"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "installments",
+            "item": [
+                {
+                    "name": "POST api/client/v1/installments/simulate",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/installments/simulate",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "installments",
+                                "simulate"
+                            ]
+                        },
+                        "description": "api.client.v1.simulations.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "integrations",
+            "item": [
+                {
+                    "name": "POST api/client/v1/integrations/city-hall/callback",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/integrations/city-hall/callback",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "integrations",
+                                "city-hall",
+                                "callback"
+                            ]
+                        },
+                        "description": "api.client.v1.integrations.cityhall.callback",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "logs",
+            "item": [
+                {
+                    "name": "GET api/client/v1/logs",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/logs",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "logs"
+                            ]
+                        },
+                        "description": "api.client.v1.logs.index"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "operations",
+            "item": [
+                {
+                    "name": "GET api/client/v1/operations/{operation}/status",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/operations/{{operation}}/status",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "operations",
+                                "{{operation}}",
+                                "status"
+                            ]
+                        },
+                        "description": "api.client.v1.operations.status"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "payments",
+            "item": [
+                {
+                    "name": "POST api/client/v1/payments/confirm",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/payments/confirm",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "payments",
+                                "confirm"
+                            ]
+                        },
+                        "description": "api.client.v1.payments.confirm",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/client/v1/payments/intent",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/payments/intent",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "payments",
+                                "intent"
+                            ]
+                        },
+                        "description": "api.client.v1.payments.intent",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/client/v1/payments/{payment}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/payments/{{payment}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "payments",
+                                "{{payment}}"
+                            ]
+                        },
+                        "description": "api.client.v1.payments.show"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "properties",
+            "item": [
+                {
+                    "name": "GET api/client/v1/properties/{registration}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/properties/{{registration}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "properties",
+                                "{{registration}}"
+                            ]
+                        },
+                        "description": "api.client.v1.properties.show"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "receipts",
+            "item": [
+                {
+                    "name": "GET api/client/v1/receipts/{payment}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/receipts/{{payment}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "receipts",
+                                "{{payment}}"
+                            ]
+                        },
+                        "description": "api.client.v1.payments.receipt"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "terminals",
+            "item": [
+                {
+                    "name": "GET api/client/v1/terminals",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/terminals",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "terminals"
+                            ]
+                        },
+                        "description": "api.client.v1.terminals.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/client/v1/terminals",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/terminals",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "terminals"
+                            ]
+                        },
+                        "description": "api.client.v1.terminals.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/client/v1/terminals/{terminal}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/terminals/{{terminal}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "terminals",
+                                "{{terminal}}"
+                            ]
+                        },
+                        "description": "api.client.v1.terminals.show"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api/client/v1/terminals/{terminal}/heartbeat",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/terminals/{{terminal}}/heartbeat",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "terminals",
+                                "{{terminal}}",
+                                "heartbeat"
+                            ]
+                        },
+                        "description": "api.client.v1.terminals.heartbeat",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "webhooks",
+            "item": [
+                {
+                    "name": "POST api/client/v1/webhooks/gateway",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/client/v1/webhooks/gateway",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "client",
+                                "v1",
+                                "webhooks",
+                                "gateway"
+                            ]
+                        },
+                        "description": "api.client.v1.webhooks.gateway",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,2608 @@
+{
+    "info": {
+        "name": "Eqora API Admin v1",
+        "_postman_id": "e9c24708354888d46d9594ac461d4c9a",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": "Gerado automaticamente a partir de php artisan route:list --json"
+    },
+    "item": [
+        {
+            "name": "debts",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/debts",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/debts",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "debts"
+                            ]
+                        },
+                        "description": "api.admin.v1.debts.index"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "entities",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/entities",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entities",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entities"
+                            ]
+                        },
+                        "description": "api.admin.v1.entities.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/entities",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entities",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entities"
+                            ]
+                        },
+                        "description": "api.admin.v1.entities.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/entities/lookup/{document}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entities/lookup/{{document}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entities",
+                                "lookup",
+                                "{{document}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.entities.lookup"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/entities/{entity}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entities/{{entity}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entities",
+                                "{{entity}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.entities.show"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api/admin/v1/entities/{entity}",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entities/{{entity}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entities",
+                                "{{entity}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.entities.update",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api/admin/v1/entities/{entity}",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entities/{{entity}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entities",
+                                "{{entity}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.entities.patch",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api/admin/v1/entities/{entity}",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entities/{{entity}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entities",
+                                "{{entity}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.entities.destroy"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/entities/{entity}/login-events",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entities/{{entity}}/login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entities",
+                                "{{entity}}",
+                                "login-events"
+                            ]
+                        },
+                        "description": "api.admin.v1.entities.login-events.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/entities/{entity}/login-events",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entities/{{entity}}/login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entities",
+                                "{{entity}}",
+                                "login-events"
+                            ]
+                        },
+                        "description": "api.admin.v1.entities.login-events.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "entity-login-events",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/entity-login-events",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entity-login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entity-login-events"
+                            ]
+                        },
+                        "description": "api.admin.v1.entity-login-events.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/entity-login-events",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entity-login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entity-login-events"
+                            ]
+                        },
+                        "description": "api.admin.v1.entity-login-events.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/entity-login-events/{event}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entity-login-events/{{event}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entity-login-events",
+                                "{{event}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.entity-login-events.show"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "entity-types",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/entity-types",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entity-types",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entity-types"
+                            ]
+                        },
+                        "description": "api.admin.v1.entity-types.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/entity-types",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entity-types",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entity-types"
+                            ]
+                        },
+                        "description": "api.admin.v1.entity-types.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/entity-types/{entityType}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entity-types/{{entityType}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entity-types",
+                                "{{entityType}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.entity-types.show"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api/admin/v1/entity-types/{entityType}",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entity-types/{{entityType}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entity-types",
+                                "{{entityType}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.entity-types.update",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api/admin/v1/entity-types/{entityType}",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entity-types/{{entityType}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entity-types",
+                                "{{entityType}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.entity-types.patch",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api/admin/v1/entity-types/{entityType}",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/entity-types/{{entityType}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "entity-types",
+                                "{{entityType}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.entity-types.destroy"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "financial-pendencies",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/financial-pendencies",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/financial-pendencies",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "financial-pendencies"
+                            ]
+                        },
+                        "description": "api.admin.v1.financial-pendencies.index"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "installments",
+            "item": [
+                {
+                    "name": "POST api/admin/v1/installments/simulate",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/installments/simulate",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "installments",
+                                "simulate"
+                            ]
+                        },
+                        "description": "api.admin.v1.simulations.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "integrations",
+            "item": [
+                {
+                    "name": "POST api/admin/v1/integrations/city-hall/callback",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/integrations/city-hall/callback",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "integrations",
+                                "city-hall",
+                                "callback"
+                            ]
+                        },
+                        "description": "api.admin.v1.integrations.cityhall.callback",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "logs",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/logs",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/logs",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "logs"
+                            ]
+                        },
+                        "description": "api.admin.v1.logs.index"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "operations",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/operations/{operation}/status",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/operations/{{operation}}/status",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "operations",
+                                "{{operation}}",
+                                "status"
+                            ]
+                        },
+                        "description": "api.admin.v1.operations.status"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "partner-types",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/partner-types",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partner-types",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partner-types"
+                            ]
+                        },
+                        "description": "api.admin.v1.partner-types.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/partner-types",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partner-types",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partner-types"
+                            ]
+                        },
+                        "description": "api.admin.v1.partner-types.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/partner-types/{partnerType}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partner-types/{{partnerType}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partner-types",
+                                "{{partnerType}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.partner-types.show"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api/admin/v1/partner-types/{partnerType}",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partner-types/{{partnerType}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partner-types",
+                                "{{partnerType}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.partner-types.update",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api/admin/v1/partner-types/{partnerType}",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partner-types/{{partnerType}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partner-types",
+                                "{{partnerType}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.partner-types.patch",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api/admin/v1/partner-types/{partnerType}",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partner-types/{{partnerType}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partner-types",
+                                "{{partnerType}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.partner-types.destroy"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "partners",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/partners",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partners",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partners"
+                            ]
+                        },
+                        "description": "api.admin.v1.partners.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/partners",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partners",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partners"
+                            ]
+                        },
+                        "description": "api.admin.v1.partners.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/partners/{partner}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partners/{{partner}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partners",
+                                "{{partner}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.partners.show"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api/admin/v1/partners/{partner}",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partners/{{partner}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partners",
+                                "{{partner}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.partners.update",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api/admin/v1/partners/{partner}",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partners/{{partner}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partners",
+                                "{{partner}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.partners.destroy"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/partners/{partner}/tenants",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partners/{{partner}}/tenants",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partners",
+                                "{{partner}}",
+                                "tenants"
+                            ]
+                        },
+                        "description": "api.admin.v1.partners.tenants.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/partners/{partner}/tenants",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/partners/{{partner}}/tenants",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "partners",
+                                "{{partner}}",
+                                "tenants"
+                            ]
+                        },
+                        "description": "api.admin.v1.partners.tenants.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "payments",
+            "item": [
+                {
+                    "name": "POST api/admin/v1/payments/confirm",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/payments/confirm",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "payments",
+                                "confirm"
+                            ]
+                        },
+                        "description": "api.admin.v1.payments.confirm",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/payments/intent",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/payments/intent",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "payments",
+                                "intent"
+                            ]
+                        },
+                        "description": "api.admin.v1.payments.intent",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/payments/{payment}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/payments/{{payment}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "payments",
+                                "{{payment}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.payments.show"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "properties",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/properties/{registration}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/properties/{{registration}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "properties",
+                                "{{registration}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.properties.show"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "receipts",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/receipts/{payment}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/receipts/{{payment}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "receipts",
+                                "{{payment}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.payments.receipt"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "tenants",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/tenants",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/tenants",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/tenants/{tenant}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.show"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api/admin/v1/tenants/{tenant}",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.update",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api/admin/v1/tenants/{tenant}",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.patch",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api/admin/v1/tenants/{tenant}",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.destroy"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/tenants/{tenant}/entities",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/entities",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "entities"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.entities.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/tenants/{tenant}/entities",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/entities",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "entities"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.entities.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/tenants/{tenant}/entities/{entity}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/entities/{{entity}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "entities",
+                                "{{entity}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.entities.show"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api/admin/v1/tenants/{tenant}/entities/{entity}",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/entities/{{entity}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "entities",
+                                "{{entity}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.entities.update",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api/admin/v1/tenants/{tenant}/entities/{entity}",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/entities/{{entity}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "entities",
+                                "{{entity}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.entities.patch",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api/admin/v1/tenants/{tenant}/entities/{entity}",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/entities/{{entity}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "entities",
+                                "{{entity}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.entities.destroy"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/tenants/{tenant}/entities/{entity}/login-events",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/entities/{{entity}}/login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "entities",
+                                "{{entity}}",
+                                "login-events"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.entities.login-events.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/tenants/{tenant}/entities/{entity}/login-events",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/entities/{{entity}}/login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "entities",
+                                "{{entity}}",
+                                "login-events"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.entities.login-events.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/tenants/{tenant}/entity-login-events",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/entity-login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "entity-login-events"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.entity-login-events.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/tenants/{tenant}/entity-login-events",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/entity-login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "entity-login-events"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.entity-login-events.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/tenants/{tenant}/terminals",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/terminals",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "terminals"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.terminals.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/tenants/{tenant}/terminals",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/terminals",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "terminals"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.terminals.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/tenants/{tenant}/terminals/{terminal}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/terminals/{{terminal}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "terminals",
+                                "{{terminal}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.terminals.show"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api/admin/v1/tenants/{tenant}/terminals/{terminal}",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/terminals/{{terminal}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "terminals",
+                                "{{terminal}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.terminals.update",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api/admin/v1/tenants/{tenant}/terminals/{terminal}",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/terminals/{{terminal}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "terminals",
+                                "{{terminal}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.terminals.patch",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api/admin/v1/tenants/{tenant}/terminals/{terminal}",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/terminals/{{terminal}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "terminals",
+                                "{{terminal}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.terminals.destroy"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api/admin/v1/tenants/{tenant}/terminals/{terminal}/heartbeat",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/terminals/{{terminal}}/heartbeat",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "terminals",
+                                "{{terminal}}",
+                                "heartbeat"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.terminals.heartbeat",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/tenants/{tenant}/terminals/{terminal}/login-events",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/tenants/{{tenant}}/terminals/{{terminal}}/login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "tenants",
+                                "{{tenant}}",
+                                "terminals",
+                                "{{terminal}}",
+                                "login-events"
+                            ]
+                        },
+                        "description": "api.admin.v1.tenants.terminals.login-events.index"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "terminals",
+            "item": [
+                {
+                    "name": "GET api/admin/v1/terminals",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/terminals",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "terminals"
+                            ]
+                        },
+                        "description": "api.admin.v1.terminals.index"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api/admin/v1/terminals",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/terminals",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "terminals"
+                            ]
+                        },
+                        "description": "api.admin.v1.terminals.store",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/terminals/{terminal}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/terminals/{{terminal}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "terminals",
+                                "{{terminal}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.terminals.show"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api/admin/v1/terminals/{terminal}",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/terminals/{{terminal}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "terminals",
+                                "{{terminal}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.terminals.update",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api/admin/v1/terminals/{terminal}",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/terminals/{{terminal}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "terminals",
+                                "{{terminal}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.terminals.patch",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api/admin/v1/terminals/{terminal}",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/terminals/{{terminal}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "terminals",
+                                "{{terminal}}"
+                            ]
+                        },
+                        "description": "api.admin.v1.terminals.destroy"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PATCH api/admin/v1/terminals/{terminal}/heartbeat",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/terminals/{{terminal}}/heartbeat",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "terminals",
+                                "{{terminal}}",
+                                "heartbeat"
+                            ]
+                        },
+                        "description": "api.admin.v1.terminals.heartbeat",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api/admin/v1/terminals/{terminal}/login-events",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/terminals/{{terminal}}/login-events",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "terminals",
+                                "{{terminal}}",
+                                "login-events"
+                            ]
+                        },
+                        "description": "api.admin.v1.terminals.login-events.index"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "webhooks",
+            "item": [
+                {
+                    "name": "POST api/admin/v1/webhooks/gateway",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/v1/webhooks/gateway",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "v1",
+                                "webhooks",
+                                "gateway"
+                            ]
+                        },
+                        "description": "api.admin.v1.webhooks.gateway",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost",
+            "type": "string"
+        }
+    ]
+}
