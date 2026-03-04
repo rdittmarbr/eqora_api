@@ -45,4 +45,11 @@ return [
         ],
     ],
 
+    'entity_gateways' => [
+        'curitiba' => [
+            'base_url' => env('ENTITY_GATEWAY_CURITIBA_BASE_URL'),
+            'timeout' => env('ENTITY_GATEWAY_CURITIBA_TIMEOUT', 5),
+        ],
+    ],
+
 ];

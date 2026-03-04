@@ -15,14 +15,15 @@ class DeviceController extends BaseApiController
 
     public function index(Request $request): JsonResponse
     {
-        $validated = $request->validate([
-            'tenant_id' => ['required', 'integer', 'exists:tenants,id'],
-            'partner_id' => ['nullable', 'integer', 'exists:partners,id'],
-            'is_active' => ['nullable', 'boolean'],
-            'per_page' => ['nullable', 'integer', 'between:1,100'],
-        ]);
+        $filters = [
+            'tenant_id' => $this->toNullableInt($request->input('tenant_id')),
+            'partner_id' => $this->toNullableInt($request->input('partner_id')),
+            'is_active' => $this->toNullableBool($request->input('is_active')),
+            'device_uuid' => $request->input('device_uuid'),
+            'per_page' => $this->toNullableInt($request->input('per_page')),
+        ];
 
-        $devices = $this->deviceManager->paginateByFilters($validated);
+        $devices = $this->deviceManager->paginateByFilters($filters);
         $data = $devices->getCollection()
             ->map(fn (Device $device) => $this->serializeDevice($device))
             ->values()
@@ -41,24 +42,40 @@ class DeviceController extends BaseApiController
 
     public function store(Request $request): JsonResponse
     {
-        $payload = $request->validate([
-            'tenant_id' => ['required', 'integer', 'exists:tenants,id'],
-            'partner_id' => ['required', 'integer', 'exists:partners,id'],
-            'device_uuid' => ['required', 'string', 'max:120'],
-            'name' => ['required', 'string', 'max:255'],
-            'platform' => ['required', 'string', 'max:40'],
-            'app_version' => ['nullable', 'string', 'max:40'],
-            'is_active' => ['nullable', 'boolean'],
-            'metadata' => ['nullable', 'array'],
-        ]);
+        $payload = [
+            'tenant_id' => $this->toNullableInt($request->input('tenant_id')),
+            'partner_id' => $this->toNullableInt($request->input('partner_id')),
+            'device_uuid' => (string) $request->input('device_uuid', ''),
+            'device_type' => (string) $request->input('device_type', ''),
+            'device_name' => $request->input('device_name'),
+            'name' => $request->input('name'),
+            'platform' => (string) $request->input('platform', ''),
+            'app_version' => $request->input('app_version'),
+            'browser_name' => $request->input('browser_name'),
+            'browser_version' => $request->input('browser_version'),
+            'specifications' => $request->input('specifications'),
+            'metadata' => $request->input('metadata'),
+            'is_active' => $this->toNullableBool($request->input('is_active')),
+        ];
 
-        if (!$this->deviceManager->partnerBelongsToTenant($payload['tenant_id'], $payload['partner_id'])) {
-            return $this->error('partner_not_found', 'Partner does not belong to the supplied tenant.', 422);
+        if ($payload['device_uuid'] === '' || $payload['platform'] === '' || $payload['device_type'] === '') {
+            return $this->error('invalid_payload', 'device_uuid, platform and device_type are required.', 422);
+        }
+
+        if (!in_array($payload['device_type'], ['android', 'browser'], true)) {
+            return $this->error('invalid_device_type', 'device_type must be android or browser.', 422);
         }
 
         $result = $this->deviceManager->upsert($payload, (string) $request->ip());
         /** @var Device $record */
         $record = $result['record'];
+
+        if ($result['blocked'] ?? false) {
+            return $this->error('device_blocked', 'Device blocked due to identity mismatch.', 423, [
+                'data' => $this->serializeDevice($record),
+            ]);
+        }
+
         $created = (bool) $result['created'];
 
         return $this->success(['data' => $this->serializeDevice($record)], $created ? 201 : 200);
@@ -66,14 +83,10 @@ class DeviceController extends BaseApiController
 
     public function show(Request $request, int $device): JsonResponse
     {
-        $validated = $request->validate([
-            'tenant_id' => ['required', 'integer', 'exists:tenants,id'],
-        ]);
-
-        $record = $this->deviceManager->findByTenantAndId($validated['tenant_id'], $device);
+        $record = $this->deviceManager->findById($device);
 
         if (!$record) {
-            return $this->error('device_not_found', 'Device was not found for the supplied tenant.', 404);
+            return $this->error('device_not_found', 'Device was not found.', 404);
         }
 
         return $this->success(['data' => $this->serializeDevice($record)]);
@@ -96,5 +109,23 @@ class DeviceController extends BaseApiController
         ];
 
         return $data;
+    }
+
+    private function toNullableInt(mixed $value): ?int
+    {
+        if ($value === null || $value === '') {
+            return null;
+        }
+
+        return is_numeric($value) ? (int) $value : null;
+    }
+
+    private function toNullableBool(mixed $value): ?bool
+    {
+        if ($value === null || $value === '') {
+            return null;
+        }
+
+        return filter_var($value, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
     }
 }

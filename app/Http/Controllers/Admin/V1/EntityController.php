@@ -25,9 +25,10 @@ class EntityController extends BaseApiController
     /**
      * Retrieve an entity (person/company) by CPF/CNPJ.
      */
-    public function show(string $document): JsonResponse
+    public function show(Request $request, string $document): JsonResponse
     {
-        $record = $this->entityFinder->findByDocument($document);
+        $partnerId = $this->resolvePartnerId($request);
+        $record = $this->entityFinder->findByDocument($document, $partnerId);
 
         if (!$record) {
             return $this->error('entity_not_found', 'Entity not found for supplied document.', 404);
@@ -65,6 +66,13 @@ class EntityController extends BaseApiController
     public function destroy(Request $request, string $entity): JsonResponse
     {
         return $this->error('not_implemented', 'EntityController@destroy not implemented.', 501);
+    }
+
+    private function resolvePartnerId(Request $request): ?int
+    {
+        $partnerId = $request->input('partner_id', $request->header('X-Partner-Id'));
+
+        return is_numeric($partnerId) ? (int) $partnerId : null;
     }
 
     private function maskDocument(?string $document): ?string
