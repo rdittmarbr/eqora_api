@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client\V1;
 
 use App\Modules\Entity\Contracts\EntityFinder;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class EntityController extends BaseApiController
 {
@@ -14,9 +15,10 @@ class EntityController extends BaseApiController
     /**
      * Retrieve an entity (person/company) by CPF/CNPJ.
      */
-    public function show(string $document): JsonResponse
+    public function show(Request $request, string $document): JsonResponse
     {
-        $record = $this->entityFinder->findByDocument($document);
+        $partnerId = $this->resolvePartnerId($request);
+        $record = $this->entityFinder->findByDocument($document, $partnerId);
 
         if (!$record) {
             return $this->error('entity_not_found', 'Entity not found for supplied document.', 404);
@@ -39,6 +41,13 @@ class EntityController extends BaseApiController
                 'updated_at' => $record['updated_at'],
             ],
         ]);
+    }
+
+    private function resolvePartnerId(Request $request): ?int
+    {
+        $partnerId = $request->input('partner_id', $request->header('X-Partner-Id'));
+
+        return is_numeric($partnerId) ? (int) $partnerId : null;
     }
 
     private function maskDocument(?string $document): ?string

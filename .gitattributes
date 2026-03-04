@@ -20,5 +20,5 @@
 # Treat PHP files as PHP
 *.php linguist-language=PHP
 
-# Ignore migration changes in diffs
-database/migrations/*.php -diff
+# Show migration changes in textual diffs
+database/migrations/*.php diff
