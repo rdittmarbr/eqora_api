@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client\V1;
 
 use App\Modules\Device\Contracts\DeviceManager;
 use App\Modules\Device\Models\Device;
+use App\Modules\Partner\Models\Partner;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -59,26 +60,62 @@ class DeviceController extends BaseApiController
         ];
 
         if ($payload['device_uuid'] === '' || $payload['platform'] === '' || $payload['device_type'] === '') {
-            return $this->error('invalid_payload', 'device_uuid, platform and device_type are required.', 422);
+            return $this->deviceValidationResponse(
+                false,
+                'Falha ao carregar os dados.',
+                false,
+                $this->emptyPartners(),
+                'device_uuid, platform and device_type are required.',
+                422
+            );
         }
 
         if (!in_array($payload['device_type'], ['android', 'browser'], true)) {
-            return $this->error('invalid_device_type', 'device_type must be android or browser.', 422);
+            return $this->deviceValidationResponse(
+                false,
+                'Falha ao carregar os dados.',
+                false,
+                $this->emptyPartners(),
+                'device_type must be android or browser.',
+                422
+            );
         }
 
         $result = $this->deviceManager->upsert($payload, (string) $request->ip());
         /** @var Device $record */
         $record = $result['record'];
+        $partners = $this->resolvePartners($record);
 
         if ($result['blocked'] ?? false) {
-            return $this->error('device_blocked', 'Device blocked due to identity mismatch.', 423, [
-                'data' => $this->serializeDevice($record),
-            ]);
+            return $this->deviceValidationResponse(
+                false,
+                'Falha ao carregar os dados.',
+                false,
+                $partners,
+                'Device is blocked.',
+                423
+            );
         }
 
-        $created = (bool) $result['created'];
+        if (!(bool) ($result['active'] ?? false)) {
+            return $this->deviceValidationResponse(
+                false,
+                'Falha ao carregar os dados.',
+                false,
+                $partners,
+                'Device is inactive.',
+                403
+            );
+        }
 
-        return $this->success(['data' => $this->serializeDevice($record)], $created ? 201 : 200);
+        return $this->deviceValidationResponse(
+            true,
+            'Dados carregados com sucesso.',
+            true,
+            $partners,
+            null,
+            200
+        );
     }
 
     public function show(Request $request, int $device): JsonResponse
@@ -127,5 +164,46 @@ class DeviceController extends BaseApiController
         }
 
         return filter_var($value, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
+    }
+
+    private function deviceValidationResponse(
+        bool $status,
+        string $message,
+        bool $enabled,
+        array $partners,
+        mixed $error,
+        int $httpStatus
+    ): JsonResponse {
+        return response()->json([
+            'status' => $status,
+            'message' => $message,
+            'enabled' => $enabled,
+            'partners' => $partners,
+            'error' => $error,
+        ], $httpStatus);
+    }
+
+    private function resolvePartners(Device $device): array
+    {
+        $device->loadMissing('partner');
+
+        /** @var Partner|null $partner */
+        $partner = $device->partner;
+        if (!$partner) {
+            return $this->emptyPartners();
+        }
+
+        return [[
+            'id' => $partner->id !== null ? (string) $partner->id : null,
+            'name' => $partner->name !== null ? (string) $partner->name : null,
+        ]];
+    }
+
+    private function emptyPartners(): array
+    {
+        return [[
+            'id' => null,
+            'name' => null,
+        ]];
     }
 }

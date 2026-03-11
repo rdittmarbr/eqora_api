@@ -13,7 +13,9 @@ class FinancialPendencyController extends BaseApiController
      */
     public function index(Request $request): JsonResponse
     {
-        $document = $request->query('document');
+        $document = $request->query('document')
+            ?? $request->query('cpf')
+            ?? $request->query('cnpj');
         $property = $request->query('property_registration');
 
         $pendings = FinancialPendency::filter($document, $property);

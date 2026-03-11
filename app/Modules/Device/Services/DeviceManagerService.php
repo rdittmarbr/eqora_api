@@ -36,58 +36,41 @@ class DeviceManagerService implements DeviceManager
 
     public function upsert(array $payload, string $ipAddress): array
     {
-        $record = Device::query()->firstOrNew([
-            'device_uuid' => $payload['device_uuid'],
-        ]);
+        $record = Device::query()
+            ->where('device_uuid', $payload['device_uuid'])
+            ->first();
 
-        $created = !$record->exists;
-        $wasActive = (bool) $record->is_active;
+        if (!$record) {
+            $record = Device::query()->create(array_merge($payload, [
+                'ip_address' => $ipAddress,
+                'connected_ip' => null,
+                'last_seen_at' => now(),
+                'connected_at' => null,
+                'disconnected_at' => now(),
+                'is_active' => false,
+                'is_blocked' => true,
+                'blocked_reason' => 'device_pending_activation',
+                'blocked_at' => now(),
+            ]));
 
-        if (!$created) {
-            if ($record->platform !== $payload['platform'] || $record->device_type !== $payload['device_type']) {
-                $record->is_blocked = true;
-                $record->blocked_reason = 'device_identity_mismatch';
-                $record->blocked_at = now();
-                $record->is_active = false;
-                $record->save();
+            $this->createConnectionLog($record, $ipAddress, 'blocked');
 
-                $this->createConnectionLog($record, $ipAddress, 'blocked');
-
-                return [
-                    'record' => $record,
-                    'created' => false,
-                    'blocked' => true,
-                ];
-            }
+            return [
+                'record' => $record,
+                'created' => true,
+                'blocked' => true,
+                'active' => false,
+            ];
         }
 
-        $isActive = $payload['is_active'] ?? true;
-
-        $record->fill(array_merge($payload, [
-            'ip_address' => $ipAddress,
-            'last_seen_at' => now(),
-        ]));
-
-        if (!$record->is_blocked) {
-            $record->is_active = $isActive;
-        }
-
-        if ($record->is_active) {
-            $record->connected_ip = $ipAddress;
-            $record->connected_at = $wasActive && $record->connected_at ? $record->connected_at : now();
-            $record->disconnected_at = null;
-        } elseif ($wasActive && !$record->disconnected_at) {
-            $record->disconnected_at = now();
-        }
-
-        $record->save();
-
-        $this->createConnectionLog($record, $ipAddress, $record->is_active ? 'connected' : 'disconnected');
+        // Existing records must not be updated by POST /devices.
+        $this->createConnectionLog($record, $ipAddress, 'validation');
 
         return [
             'record' => $record,
-            'created' => $created,
+            'created' => false,
             'blocked' => (bool) $record->is_blocked,
+            'active' => (bool) $record->is_active,
         ];
     }
 
